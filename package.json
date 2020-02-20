@@ -21,7 +21,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.1",
     "mysql": "^2.18.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "validator": "^12.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
