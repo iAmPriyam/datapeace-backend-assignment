@@ -56,6 +56,43 @@ This will a `status:200` along side a JSON with a msg _"User route working"_
 
 The services of the applications are routed at a single endpoint via different method. All the endpoints of this application is exposed at `/api/users`
 
+## File Structure
+
+The file structure of the code base is given below. The following tree represents the different folders in the directory.
+
+```
+app
+├── config
+│   └── key.js
+|
+├── models
+│   └── Users.js
+|
+├── validation
+│   └── isEmpty.js
+|   └── user.js
+|
+├── index.js
+|
+├── initialise.js
+|
+├── package-lock.json
+|
+├── package.json
+│
+└── README.md
+```
+
+`initialise.js` : It was used to fetch the dummy data of hundreds of users from the link mentioned in the assignment to populate the database.
+
+`index.js` : Entrypoint for node to the application
+
+`config/key.js` : Stores and export keys and credentials to the app.
+
+`routes/api/users.js` : Script for the API endpoints.
+
+`validation/*` : validation logics.
+
 ### GET
 
 > **Available at** `GET:api/user` \
