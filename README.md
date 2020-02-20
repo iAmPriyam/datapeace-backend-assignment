@@ -35,7 +35,9 @@ Clone the repository and install the dependencies. Follow the commands given bel
 ```
 $ git clone https://github.com/iAmPriyam/datapeace-backend-assignment
 $ cd datapeace-backend-assignment
+//install dependencies
 $ npm install
+//run the application
 $ node index
 ```
 
@@ -91,3 +93,17 @@ The services of the applications are routed at a single endpoint via different m
 | Method | Parameter type | Parameter value | Success Status code | Result                                                |
 | ------ | -------------- | --------------- | ------------------- | ----------------------------------------------------- |
 | DELETE | Param          | _id_            | 200                 | The resultant entry will be deleted from the database |
+
+## Task Summary
+
+Under the span of 48 hours which were allotted to me I was able to perform the following tasks:
+
+- [x] Create a new database cluster on MongoDB Atlas to store the the database
+- [x] Create the schema to store the user data
+- [x] Fetch the demo data from the provided source (https://datapeace-storage.s3-us-west-2.amazonaws.com/dummy_data/users.json)
+- [x] Implement the logic for the GET method, and retrieving the user data from the database through various ways.
+- [x] Implement the logic for the POST method, and create and save a new user using the data which is submitted through the body parameter.
+- [x] Implement the logic for the PUT method, in order to update the details of an existing user using it's _id_ to retrieve it.
+- [x] Implement the logic for the DELET method, and delete the entry of the user from the database using it's _id_.
+- [x] Write the documentation of the application it's working, usage, and installation procedure.
+- [ ] Implement the logic for the pagination of the data which was to be retrieved from the database using the query parameters
