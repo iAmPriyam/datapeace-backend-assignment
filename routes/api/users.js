@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const validateUserInput = require("../../validation/user");
 //Loading User model
 const User = require("../../models/User");
 
@@ -16,11 +15,6 @@ router.get("/test", (req, res) => {
 //@access   Public
 router.post("", (req, res) => {
   //   console.log(req.body);
-  const { errors, isValid } = validateUserInput(req.body);
-
-  if (!isValid) {
-    res.status(400).json(errors);
-  }
 
   User.findOne({ id: parseInt(req.body.id) })
     .then(user => {

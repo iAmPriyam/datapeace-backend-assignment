@@ -68,10 +68,6 @@ app
 ├── models
 │   └── Users.js
 |
-├── validation
-│   └── isEmpty.js
-|   └── user.js
-|
 ├── index.js
 |
 ├── initialise.js
@@ -90,8 +86,6 @@ app
 `config/key.js` : Stores and export keys and credentials to the app.
 
 `routes/api/users.js` : Script for the API endpoints.
-
-`validation/*` : validation logics.
 
 ### GET
 
