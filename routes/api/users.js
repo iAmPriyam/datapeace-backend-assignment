@@ -59,7 +59,7 @@ router.get("/:id?", (req, res) => {
   if (Object.keys(req.query).length !== 0) {
     //Could not achieve pagination of the result
     const page = Number(req.query.page);
-    const limit = Number(req.query.limit) || 5;
+    const limit = Number(req.query.limit);
     const name = req.query.name;
     const sort = req.query.sort;
     User.find({
@@ -109,7 +109,10 @@ router.put("/:id", (req, res) => {
     .then(() => {
       User.find({ id: req.params.id })
         .then(user => {
-          res.status(200).json(user);
+          if (Object.keys(user).length != 0) res.status(200).json(user);
+          else {
+            res.status(400).json({ error: "User does not exists" });
+          }
         })
         .catch(error => {
           res.status(400).json(error);
@@ -117,6 +120,20 @@ router.put("/:id", (req, res) => {
     })
     .catch(error => {
       res.status(400).json(error);
+    });
+});
+
+//@route    DELETE       api/users/
+//@desc     deletes      user data
+//@access   Public
+router.delete("/:id", (req, res, next) => {
+  const id = req.params.id;
+  User.findOneAndDelete({ id })
+    .then(() => {
+      res.status(200).json({ success: `User with id: ${id} deleted` });
+    })
+    .catch(error => {
+      res.status(400).json({ error });
     });
 });
 
