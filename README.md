@@ -144,3 +144,4 @@ Under the span of 48 hours which were allotted to me I was able to perform the f
 - [x] Implement the logic for the DELET method, and delete the entry of the user from the database using it's _id_.
 - [x] Write the documentation of the application it's working, usage, and installation procedure.
 - [ ] Implement the logic for the pagination of the data which was to be retrieved from the database using the query parameters
+- [ ] Write tests for the following code
