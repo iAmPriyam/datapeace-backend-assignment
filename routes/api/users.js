@@ -101,4 +101,23 @@ router.get("/:id?", (req, res) => {
   }
 });
 
+//@route    PUT          api/users/
+//@desc     updates      user data
+//@access   Public
+router.put("/:id", (req, res) => {
+  User.findOneAndUpdate({ id: Number(req.params.id) }, req.body)
+    .then(() => {
+      User.find({ id: req.params.id })
+        .then(user => {
+          res.status(200).json(user);
+        })
+        .catch(error => {
+          res.status(400).json(error);
+        });
+    })
+    .catch(error => {
+      res.status(400).json(error);
+    });
+});
+
 module.exports = router;
